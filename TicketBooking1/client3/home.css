@@ -1,0 +1,166 @@
+*{
+    box-sizing: border-box;
+}
+.header{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 5;
+    background-color: #5333ed;
+  }
+  .container{
+    width: 100%; 
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+  .left-nav{
+   width: 50%;
+   float: left;
+  }
+  .right-nav{
+    width: 50%;
+    float:right;
+  }
+  .right-nav button{
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 15px;
+    padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-top: 1%;
+  }
+  .right-nav button:hover{
+    background-color: #8168ff;
+    
+  }
+
+  .right-nav .dropdown:hover .dropDown-content {
+    display: block;
+  }
+  .right-nav .profile:hover .dropDown-content {
+    display: block;
+  }
+  .profile{
+    position: relative;
+    display: inline-block;
+    margin-right: 40px;
+  }
+  .dropdown{
+    position: relative;
+    display: inline-block;
+  }
+  .dropDown-content1{
+        display: none;
+        position: absolute;
+        background-color: #5333ed;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        padding: 12px 16px;
+        z-index: 1;
+  }
+  .dropDown-content{
+    display: none;
+    position: absolute;
+    background-color: #5333ed;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
+  .profile
+  {
+    border-radius:10px ;
+
+  }
+  .profile .fas
+  {
+    padding: 15px;
+    font-size: 24px;
+    border-radius: 50%;
+    background: #8168ff;
+  }
+  /* ---------------------------header main style starts----------------- */
+  .inputLabel-focusIn{
+    position: absolute;
+    left: 30px;
+    color: #9b9b9b;
+    font-size: 10px;	
+    margin-top: 1px;
+    top:-10px;
+}
+
+  .home-banner {
+	background-image: url(https://unic.eu/storage/app/media/news/Train%20banner.png);
+	background-size: cover;
+	background-repeat: round;
+	height: 600px;
+}
+
+.input-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    right: 50%;
+}
+.form-content{
+    justify-content: center;
+    display: flex;
+}
+.input-position{
+    display: inline-block;
+    position: relative;
+}
+.input-position .inputIcon{
+    position: absolute;
+    left: 5px;
+    text-align: center;
+    font-size: 25px;
+    vertical-align: middle;
+    color: #AAA;
+}
+.input-position .inputlable{
+    position: absolute;
+    left: 30px;
+    color: grey;
+    font-weight: 350;
+    font-size: 15px;
+    margin-top: 8px;
+    transition-duration: 0.3s;
+}
+.input-position .inputForm{
+    width: 225px;
+    height: 40px;
+    padding-left: 28px;
+    outline: none;
+}
+.input-position .submit{
+    color: white;
+    background-color: #8168ff;
+    border-color:#8168ff ;
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+/* ------------------------jquery style----------------------- */
+
+#input-from-list{
+  z-index:10;
+  background-color: white;
+}
+#input-to-list{
+  background-color: white;
+}

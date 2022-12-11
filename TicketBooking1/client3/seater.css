@@ -1,0 +1,144 @@
+#select-seat-banner {
+    width: 300px;
+    box-shadow: 0 0 10px 0.5px rgb(151, 151, 151);
+}
+
+#payment-banner {
+    margin-left: 10px;
+    box-shadow: 0 0 10px 0.5px rgb(151, 151, 151);
+}
+
+#proceed-banner {
+    display: flex;
+    padding: 10px;
+}
+
+.berth-row {
+    background-color: rgb(213, 213, 213);
+    width: 200px;
+    margin: 50px;
+    border-radius: 4px;
+    display: flex;
+
+}
+.berth-row img
+{
+    padding: 2px;
+}
+
+#threeseats {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+#side {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.rowseat {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+}
+
+.rowseat img {
+    margin: 0.5rem;
+}
+
+.seats {
+    height: 20px;
+    margin: 5px;
+    margin: 0px 0px 10px 0px;
+    margin-top: 10px;
+    transition-duration: 0.5s;
+}
+
+.seats:hover {
+    height: 25px;
+    transition-duration: 0.5s;
+}
+
+.sleeper {
+    height: 28px;
+    margin: 0px 0px 10px 0px;
+    transition-duration: 0.5s;
+}
+
+.sleeper:hover {
+    height: 40px;
+    transition-duration: 0.5s;
+}
+
+.payment-banner .content {
+    border: blue 1px solid;
+    background-color: white;
+    padding: 20px;
+    width: 400px;
+
+}
+
+.from-to {
+    display: flex;
+}
+
+.route {
+    width: 80px;
+}
+
+.fa {
+    margin: 10px;
+    transition-duration: 0.5s;
+}
+
+.fa:hover {
+    color: #e94049;
+    transition-duration: 0.5s;
+}
+
+p {
+    margin: -4px;
+}
+
+.lighter {
+    font-size: 10px;
+}
+
+.flex {
+    display: flex;
+}
+
+#amt {
+    margin-left: 170px;
+}
+
+.check-out {
+    height: 40px;
+    width: 20pc;
+    margin: 30px;
+    background-color: #d84e55;
+    display: inline-block;
+    padding: 6px 16px 7px;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 400;
+    overflow: hidden;
+    position: relative;
+    text-decoration: none;
+    transition: .1s;
+
+    border: none;
+    text-align: center;
+    color: rgb(242, 240, 240);
+    transition-duration: 0.5s;
+}
+
+.check-out:hover {
+    background-color: #e94049;
+    color: rgb(255, 255, 255);
+    transition-duration: 0.5s;
+}

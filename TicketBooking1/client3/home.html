@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+  
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel='stylesheet' type='text/css' media='screen' href='client3/home.css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="left-nav">
+                <h3>Railway reservation</h3>
+            </div>
+            <div class="right-nav">
+                <span class="profile" style="float: right;">
+                    <button  class='fas'>&#xf406;</button>
+                    <div class="dropDown-content">
+                      <form action="authentication"><button id="registration">signIn/SignUp</button></form> 
+                       <form action="logout"><button id="logout">logOut</button></form>
+                    </div>
+                </span>
+                <span class="dropdown" style="float: right;">
+                  <form action="userHistory"> <button id="book-history">Manage Booking</button></form> 
+                    <!-- <div class="dropDown-content">
+                        <button>link 1</button>
+                        <button>link 2</button>
+                        <button>link 3</button>
+                        <button id="test">tesing</button>
+                    </div> -->
+                </span>
+                
+             </div>
+        </div>
+    </div>
+    <!-- ------------------------------------------header ends ---------------------------------- -->
+    <div>
+        <div class="home-banner"></div>
+    </div>
+    <div class="input-container">
+        <form class="form-content" action="searchTrain">
+            <div class="input-position">
+                <span class="inputIcon">
+                    <i class="far fa-building"></i>
+                </span>
+                <label class="inputlable">From</label>
+                <input id="input-label-from" name="from" class="inputForm" onkeyup="initialChoice()"type="text" >
+                <div id="input-from-list"></div>
+            </div>
+            <div class="input-position">
+                <span class="inputIcon">
+                    <i class="far fa-building"></i>
+                </span>
+                <label class="inputlable ">To</label>
+                <input id="input-label-to" name="to" class="inputForm" onkeyup="destinationChoice()" type="text" >
+                <div id="input-to-list"></div>
+            </div>
+            <div class="input-position">
+                <span class="inputIcon">
+                    <i class="fa fa-calendar-alt"></i>
+                </span>
+                <label class="inputlable ">Onward date</label>
+                <input id="input-label-onward-date" name="onward" class="inputForm" type="text">
+                
+            </div>
+            <!-- <div class="input-position">
+                <span class="inputIcon"> <i class="fa fa-calendar-alt"></i></span>
+                <label class="inputlable">Return date</label>
+                <input id="input-label-return-date" name="return" class="inputForm" type="text">
+            </div> -->
+            <div  class="input-position">
+                <input class="submit" type="submit" value="Search Trains">
+            </div>
+        </form>
+    </div>
+    <!-- ------------------------------------------------------------------------------------------- -->
+     
+</body>
+<script src='client3/home.js'></script>
+</html>

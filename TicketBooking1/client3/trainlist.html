@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='client3/trainList.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='client3/bookseats.css'>
+    <script src="https://kit.fontawesome.com/1faf82f1a3.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel='stylesheet' type='text/css' media='screen' href='client3/seater.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='client3/boarding.css'>
+
+</head>
+
+<body>
+
+    <div class="application">
+        <h2 style="width: 50%;float: left;">Train Details</h2>
+        <span style="float: right; margin-top: 20px;">
+           <form id="register" action="authentication"><button >signIn/SignUp</button></form> 
+            <form id="logout" action="logout"><button >Logout</button></form>
+        </span>
+        <span style="float: right; margin-top: 20px;">
+           <form id="wishList" action="userHistory"><button>booked Tickets</button></form>
+         </span>
+    </div>
+    <div class="header2">
+        <div class="content">
+            <span id="from"></span>
+            <span><i class="fa-solid fa-arrow-right-long"></i></span>
+            <span id="to"></span>
+            <span><button id="prevDay"><i class="fa-solid fa-chevron-left"></i></button> </span>
+            <span id="date"></span><input type="date" name="input-date" id="input-date" style="width: 1rem;">
+            <span><button id="nextDay"><i class="fa-solid fa-chevron-right"></i></button></span>
+        </div>
+
+    </div>
+    </div>
+    <div class="container">
+        <div class="filter">
+            <div class="left-nav-details">
+                <h4 class="title">departure time</h4>
+                <div class="depart-time">
+                    <div class="topic">
+                        <input type="checkbox" id="before6am">
+                        <label for="before6am">before6am</label>
+                    </div>
+                    <div class="topic">
+                        <input type="checkbox" id="6amto12pm">
+                        <label for="6amto12pm"> 6Am to 12pm</label>
+                    </div>
+                    <div class="topic">
+                        <input type="checkbox" id="12pmto6pm">
+                        <label for="12pmto6pm"> 12pm to 6pm</i>
+                    </div>
+                    <div class="topic">
+                        <input type="checkbox" id="after6pm">
+                        <label for="after6pm"> after 6pm</i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="left-nav-details">
+                <h4 class="title">Train Types</h4>
+                <div>
+                    <h5 class="subtitle">Class</h5>
+                    <div class="topic">
+                        <input type="checkbox" id="ACSeater">
+                        <label for="ACSeater">ACSeater</label>
+                    </div>
+                     <div class="topic">
+                        <input type="checkbox" id="ACSleeper">
+                        <label for="ACSleeper">ACSleeper</label>
+                    </div>
+                    <div class="topic">
+                        <input type="checkbox" id="Sleeper">
+                        <label for="Sleeper">Sleeper</label>
+                    </div>
+                    <div class="topic">
+                        <input type="checkbox" id="Seater">
+                        <label for="Seater">Seater</label>
+                    </div>
+                </div>
+                <div>
+                    <h5 class="subtitle">Sleeper</h5>
+                    <div class="topic">
+                        <input type="checkbox" id="upper">
+                        <label for="upper">Upper</label>
+                    </div>
+                    <div class="topic">
+                        <input type="checkbox" id="middle">
+                        <label for="middle">Middle</label>
+                    </div>
+                    <div class="topic">
+                        <input type="checkbox" id="lower">
+                        <label for="lower">Lower</label>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="left-nav-details">
+                <div class="title">Boarding Point</div>
+                <div>
+                    <input type="text" id="boardingPoint" placeholder="boarding">
+                </div>
+                <div class="title" style="margin-top: 0;">Dropping Point</div>
+                <div>
+                    <input type="text" id="DroppingPoint" placeholder="dropping">
+                </div>
+            </div> -->
+        </div>
+
+        <div class="details element">
+            <div class="sorting">
+                <span id="total-Trains" class="head">0 trains found</span><span
+                    style="margin-left: 1%;font-size: 15px;"> Sort By :</span>
+                    
+                <span style="margin-left:  5%;">Departure</span><span>Arrival</span><span>Duration</span><span>Seats Available</span>
+            
+            </div>
+            <div class="list-box" id="list-box">
+              
+                <div class="list-of-train">
+                   
+                    <div>
+                        <span style="margin-left: 0%;" id="trainName">Chennai Express</span>
+                        <span class="trainCol" id="trainDeparture">23:55</span>
+                        <span class="trainCol" id="arraival">05:25</span>
+                        <span class="trainCol" id="duration">6 hours</span>
+                        <span class="trainCol" id="seatsAvailable">200 seats available</span>
+                    </div>
+                    <div class="trainrow2">
+                        <span class="trainCol2">Kumbakonum</span>
+                        <span class="trainCol2"> Chennai</span>
+                    </div>
+                    <div>
+                        <button class="selectTrain" onclick="showOptions('selection1')">select Train</button>
+                    </div>
+                    <div id="selection"></div>
+                    <div style="display: flex;">
+                        <div id="selection1" class="selection"></div>
+                        <div id="selection2" class="selection"></div>
+                        <div id="selection3" class="selection"></div>
+                    </div>
+                </div>
+                <div class="list-of-train">
+                    <div>
+                        <span style="margin-left: 0%;" id="trainName">
+                            <------------name----------->
+                        </span>
+                        <span class="trainCol" id="trainDeparture">
+                            <----->
+                        </span>
+                        <span class="trainCol" id="arraival">
+                            <------->
+                        </span>
+                        <span class="trainCol" id="duration">
+                            <------>
+                        </span>
+                        <span class="trainCol" id="seatsAvailable">
+                            <------------------->
+                        </span>
+                    </div>
+                    <div class="trainrow2">
+                        <span class="trainCol2">initial </span>
+                        <span class="trainCol2"> destination</span>
+                    </div>
+                    <div>
+                        <button class="selectTrain" onclick="showOptions('selection2')">select Train</button>
+                    </div>
+                    <div id="selection3"></div>
+                    <div id="selection4"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="container-List" class="train-container">
+        <div style="width: 100%;margin-left: 18%;">
+            <div class="container-choice">
+                <img src="client3/engine1.png">
+                <span class="firstclass">
+                    <button onclick="showSeat('fc1')"><img src="client3/container2.png"></button>
+                    <button onclick="showSeat('fc1')"><img src="client3/container2.png"></button>
+                    <button onclick='showSeat("fc1")'><img src="client3/container2.png"></button>
+                    <button onclick='showSeat("fc1")'><img src="client3/container2.png"></button>
+                    <button onclick='showSeat("fc1")'><img src="client3/container2.png"></button>
+                </span>
+                <span class="secondclass">
+                    <img src="client3/container2.png">
+                    <img src="client3/container2.png">
+                    <img src="client3/container2.png">
+                    <img src="client3/container2.png">
+                    <img src="client3/container2.png">
+                </span>
+                <!-- <div style="width:100%;height: 10px; "><span style="width:50%; ">first class</span><span style="width:50%;">Second class</span></div> -->
+                <span class="thirdclass">
+                    <img src="client3/container2.png">
+                    <img src="client3/container2.png">
+                    <img src="client3/container2.png">
+                    <img src="client3/container2.png">
+                    <img src="client3/container2.png">
+                </span>
+                <span class="sleeper">
+
+                    <img src="client3/container2.png">
+                    <img src="client3/container2.png">
+                    <img src="client3/container2.png">
+                    <img src="client3/container2.png">
+                    <img src="client3/container2.png">
+
+                    <!-- <div style="width:100%;"><span style="width:50%;">third class</span><span style="width:50%;">sleeper class</span></div> -->
+            </div>
+        </div>
+    </div>
+    <div class="row-Box" style="display: none;">
+        <div id="proceed-banner">
+            <div id="select-seat-banner">
+                <div class="berth" id="sleeper">
+                    <div class="berth-row" style="display: flex;">
+                        <div style="width:100%;">
+                            
+                                <div class="rowseat">
+                                    <button style="background-color: red;color: white;">booked</button><button style="background-color: blue;color: white;">paid</button><button>available</button>
+                                </div>
+                            
+                            <div>
+                                <img id="S1"class="sleeper Lower" onclick="bookSeats('S1')" src="client3/sleeper.png" alt="">
+                                <img id="S2"class="sleeper Middle" onclick="bookSeats('S2')" src="client3/sleeper.png" alt="">
+                                <img id="S3"class="sleeper Upper" onclick="bookSeats('S3')" src="client3/sleeper.png" alt="">
+                            </div>
+                            <div>
+                                <img id="S4"class="sleeper Lower" onclick="bookSeats('S4')" src="client3/sleeper.png" alt="">
+                                <img id="S5"class="sleeper Middle" onclick="bookSeats('S5')" src="client3/sleeper.png" alt="">
+                                <img id="S6"class="sleeper Upper" onclick="bookSeats('S6')" src="client3/sleeper.png" alt="">
+                            </div>
+                            <div>
+                                <img id="S7"class="sleeper Lower" onclick="bookSeats('S7')" src="client3/sleeper.png" alt="">
+                                <img id="S8"class="sleeper Middle" onclick="bookSeats('S8')" src="client3/sleeper.png" alt="">
+                                <img id="S9"class="sleeper Upper" onclick="bookSeats('S9')" src="client3/sleeper.png" alt="">
+        
+                            </div>
+                            <div>
+                                <img id="S10"class="sleeper Lower" onclick="bookSeats('S10')" src="client3/sleeper.png" alt="">
+                                <img id="S11"class="sleeper Middle" onclick="bookSeats('S11')" src="client3/sleeper.png" alt="">
+                                <img id="S12"class="sleeper Upper" onclick="bookSeats('S12')" src="client3/sleeper.png" alt="">
+                            
+                            </div>
+                            <div>
+                                <img id="S13"class="sleeper Lower" onclick="bookSeats('S13')" src="client3/sleeper.png" alt="">
+                                <img id="S14"class="sleeper Middle" onclick="bookSeats('S14')" src="client3/sleeper.png" alt="">
+                                <img id="S15"class="sleeper Upper" onclick="bookSeats('S15')" src="client3/sleeper.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="berth" id="seater">
+                    <div class="berth-row" style="display: flex;">
+                        <div id="threeseats">
+                            <div class="rowseat">
+                                <button style="background-color: red;color: white;">booked</button><button style="background-color: blue;color: white;">paid</button><button>available</button>
+                            </div>
+                            <div class="rowseat">
+                                <img id="S1"class="seats" onclick="bookSeats('S1')" src="client3/seater.png" alt="">
+                                <img id="S2" class="seats" onclick="bookSeats('S2')" src="client3/seater.png" alt="">
+                                <img id="S3"class="seats" style="margin-right: 15%;" onclick="bookSeats('S3')" src="client3/seater.png"
+                                    alt=>
+                            </div>
+                            <div class="rowseat">
+                                <img id="S4" class="seats" onclick="bookSeats('S4')" src="client3/seater.png" alt="">
+                                <img id="S5" class="seats" onclick="bookSeats('S5')" src="client3/seater.png" alt="">
+                                <img id="S6" class="seats" style="margin-right: 15%;" onclick="bookSeats('S6')" src="client3/seater.png"
+                                    alt=>
+                            </div>
+                            <div class="rowseat">
+                                <img id="S7" class="seats" onclick="bookSeats('S7')" src="client3/seater.png" alt="">
+                                <img id="S8" class="seats" onclick="bookSeats('S8')" src="client3/seater.png" alt="">
+                                <img id="S9" class="seats" style="margin-right: 15%;" onclick="bookSeats('S9')" src="client3/seater.png"
+                                    alt="">
+                            </div>
+                            <div class="rowseat">
+                                <img id="S10" class="seats" onclick="bookSeats('S10')" src="client3/seater.png" alt="">
+                                <img id="S11" class="seats" onclick="bookSeats('S11')" src="client3/seater.png" alt="">
+                                <img id="S12" class="seats" style="margin-right: 15%;" onclick="bookSeats('S12')"
+                                    src="client3/seater.png" alt="">
+                            </div>
+                            <div class="rowseat">
+                                <img id="S13" class="seats" onclick="bookSeats('S13')" src="client3/seater.png" alt="">
+                                <img id="S14" class="seats" onclick="bookSeats('S14')" src="client3/seater.png" alt="">
+                                <img id="S15" class="seats" onclick="bookSeats('S15')" src="client3/seater.png" alt="">
+                            </div>
+                        </div>
+                      
+                    </div>
+                </div>
+            </div>
+            <div id="payment-banner">
+                <div class="content">
+                    <h2 id="payment-title">Boarding & Dropping</h2>
+                    <div class="from-to">
+                        <div class="route">
+
+                        </div>
+                        <div>
+                            <h3>
+                               <i>From</i> <i class="fa fa-map-marker" aria-hidden="true"></i><i id="boarding-from">Kumbakonam</i>
+                            </h4>
+                            <h4>
+                               <i>To</i> <i class="fa fa-map-marker" aria-hidden="true"></i><i id="dropping-to">Chennai</i>
+                            </h3>
+                        </div>
+                    </div>
+                    <hr>
+                    <div id="bookedTrainDetails" class="bookedTrainDetails">
+                        <h3 id="Train no">Train name</h3>
+                        <div>
+                            <span><b>tickets no :</b><i id="coachId">ACv</i></span>
+                        </div>
+                    </div>
+                    <hr>
+                    <h3>Fare Details</h3>
+                    <div class="flex">
+                        <div>
+                            <p>Amount</p>
+                            <p class="lighter">gst will be calculated during payment</p>
+                        </div>
+                        <div id="amt">
+                            INR 10.0
+                        </div>
+                    </div>
+                    <button class="check-out" onclick="checkOut()">
+                        Proceed to Book
+                    </button>
+                </div>
+            </div>
+            <div id="boardingBox">
+                <div class="boardingBox">
+                    <div class="boarding " id="boardingPoint2">
+                        <div class="boarding-point">
+                            <button class="active">Boarding point</button>
+                            <button onclick="buttonBD();">Dropping point</button>
+                        </div>
+                        <div>
+                           <h3>Boarding</h3> 
+                        </div>
+                        <div class="list-places1" id="listPlaces1">
+                            <div><input type="checkbox" onclick=""><span>london</span></div>
+     
+                        </div>
+                    </div>
+                    <div class="boarding hide" id="droppingPoint">
+                        <div class="boarding-point">
+                            <button onclick="buttonBD();">Boarding point</button>
+                            <button class="active">Dropping point</button>
+                        </div>
+                        <div>
+                             <h3>Dropping </h3>
+                        </div>
+                        <div class="list-places2" id="listPlaces2">
+                            <div><input type="checkbox"><span>london</span></div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="screenOff" id="screenBlur"></div>
+    <div id="registerBookingName">
+        <div class="container100" id="seatsRegister">
+            <div style="width: 100%;">
+                <h1 style="float: left;width:70%">Register Seats</h1>
+                <button style="float: left;width:20%" onclick="cancelBooking()">cancel</button>
+            </div>
+        
+          <hr>
+          <div id="passengerRegister">
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email" id="email" required>
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email" id="email" required>
+          </div>
+          <button  onclick="payment();" class="registerbtn100">Register</button>
+        </div>
+    </div>
+    
+    <form action="home">
+        <input id="goback" type="submit" hidden>
+    </form>
+    <script src="client3/trainList.js"></script>
+    <script src="client3/trainList1.js"></script>
+
+    <script src="client3/unRegisteredRecords.js"></script>
+</body>
+
+</html>

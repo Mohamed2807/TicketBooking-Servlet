@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' media='screen' href='admin3/admin.css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="left-nav">
+                <h3>Welcome Admin</h3>
+            </div>
+            <div style="float: right;">
+                <form action="adminlogout"><button>logout</button></form>
+            </div>
+        </div>
+    </div>
+    <div class="sidebar">
+        <a class="r1 active" onclick="home()">Home</a>
+        <a class="r2" id="addTrains" onclick="addTrains()">Add Trains</a>
+        <a class="r3" id="viewBooking" onclick="viewBooking()">view Booking</a>
+        <a class="r4"onclick="trainsStatus()">View trains</a>
+      </div>
+      <div class="content">
+        <div class="box" onclick="earnings()">
+            <h3>Earnings</h3>
+            <span>The total earning today</span>
+            <div id="homeEarnings">0</div><br><br>
+            <span>the count of the passenger</span>
+            <div id="homePassenger">0</div>
+        </div>
+        </div>
+        <div class="earning">
+            <!-- <h1>Today earning</h1> -->
+            <!-- <table>
+                <tr><th style="background-color: white;color:blue">Trains available</th><td id="trainAvailable">10</td></tr>
+                <tr><th style="background-color: white;color:blue">Total Passengers</th><td id="totalPassenger">200</td></tr>
+                <tr><th style="background-color: white;color:blue">Seater Tickets</th><td id="seaterComp">20</td></tr>
+                <tr><th style="background-color: white;color:blue">Sleeper Tickets</th><td id="sleeperCopm">25</td></tr>
+                <tr><th style="background-color: white;color:blue">Ac sleeper Tickets</th><td id="acSleeperComp">30</td></tr>
+                <tr><th style="background-color: white;color:blue">Ac seater Tickets</th><td id="acSeaterComp">50</td></tr>
+                <tr><th style="background-color: white;color:blue">Total earnings</th><td id="totalEarnings">10000</td></tr>
+            </table>
+            <div><br><br></div>
+            <table>
+                <tr>
+                    <th>class</th>
+                    <th>per fare</th>
+                    <th>seats</th>
+                    <th>total</th>
+                </tr>
+                <tr>
+                    <td> first class</td>
+                    <td>210</td>
+                    <td>20</td>
+                    <td>100</td>
+                </tr>
+            </table> -->
+        </div>
+        <div class="todaytrain">
+            <h1> Today Trains list</h1>
+            <table>
+                <tr>
+                    <th>train id</th>
+                    <th>train name</th>
+                    <th>Departure </th>
+                    <th>Arrival</th>
+                    <th>available</th>
+                </tr>
+                <tr><td>123456</td>
+                    <td> Ullavan</td>
+                    <td> 23:55</td>
+                    <td> 5:00</td>
+                    <td> 50 seats</td>
+                </tr>
+                <tr><td>123456</td>
+                    <td> Ullavan</td>
+                    <td> 23:55</td>
+                    <td> 5:00</td>
+                    <td> 50 seats</td>
+                </tr>
+            </table>
+        </div>
+        <div></div>
+       
+      <div class="addTrains">
+        <div class="container">
+            <h1>Add Train</h1>
+            <label for="pnr">Train ID</label>
+            <input type="Number" id="trainId" placeholder="Enter id" required>
+
+            <label for="Name">Train Name</label>
+            <input type="text" id="trainName"  placeholder="train name" required>
+
+            <label>Stops</label>
+            <div class="stops">
+                <div style="display:flex;">
+                    <input id="stops-field" type="text" placeholder="train name"/>
+                    <input style="margin-left: 10px;" type="text" placeholder="Time"/>
+                    <i onclick="addAStop5(this)" style="margin-top: 20px; margin-left: 10px;" class="fa fa-plus" id="test" aria-hidden="true"></i>
+                </div>
+            </div>
+
+            <label for="shift" style="padding-right: 70%;">Seater</label>
+            <span>
+                <input type="number" style="width: 70% ;float: left; " id="seater_count">
+                <input style="width: 29% ;float: left;" type="number" placeholder="fare" id="seater_fare">
+            </span>
+            
+            <label for="shift" style="padding-right: 70%;">Sleeper</label>
+            <span>
+                <input type="number"  style="width: 70% ;float: left;" id="sleeper_count">
+                <input style="width: 29%;float: left;" type="number" placeholder="fare" id="sleeper_fare">
+            </span>
+            
+            <label for="shift"  style="padding-right: 70%;">AC_Seater</label>
+            <span>
+                <input type="number"  style="width: 70% ;float: left;" id="ac_seater_count">
+                <input style="width: 29%;float: left;" id="ac_seater_fare" placeholder="fare" type="number">
+            </span>
+                
+            <label for="shift"  style="padding-right: 70%;">AC_Sleeper</label>
+            <span>
+                <input type="number"  style="width: 70% ;float: left;" id="ac_sleeper_count">
+                <input  style="width: 29%;float: left;" type="number" placeholder="fare" id="ac_sleeper_fare">
+            </span>
+              
+            <input type="submit" onclick="trainRegistration()">
+            
+          </div>
+      </div>
+
+      <div class="view-Booking">
+        <h1>View-booking</h1>
+        <span>Date <input id="date-input" type="date"></span>
+        <span>Train Number <input type="text" id="trainID-input" placeholder="Train No"></span>
+        <span><button id="search-button" onclick="queryBookings()">Search</button></span>
+        <table id="all-boookings">
+            <tr>
+                <th>Train Number</th>
+                <th>Date</th>
+                <th>Passenger Name</th>
+                <th>Fare</th>
+                <th>Seat No</th>
+                <th>Booked By</th>
+                <th>Coach</th>
+            </tr>
+        </table>
+      </div>
+      
+      <div class="view-trains">
+        <h1>Train List</h1>
+        <table id="all-trains">
+            <tr>
+                <th>Train Number</th>
+                <th>Name</th>
+                <th>Boarding Point</th>
+                <th>Destination Point</th>
+                <th>Departure Time </th>
+                <th>Arrival Time</th>
+                <th>AC / Seater</th>
+                <th>AC / Sleeper</th>
+                <th>AC /seater fare</th>
+                <th>AC /sleeper fare</th>
+                <th>Coach</th>
+            </tr>
+        </table>
+      </div>
+      <div class="view-trains" style="margin-top: 0%;">
+        <h1>Train List  by Date</h1>
+        <table id="all-trains-ByDate">
+            
+        </table>
+      </div>
+  </div>
+      <div class="view-trains" style="margin-top: 0%;width:fit-content" id="stops-editor">
+        
+    <script src='admin3/admin.js'></script>
+</body>
+</html>

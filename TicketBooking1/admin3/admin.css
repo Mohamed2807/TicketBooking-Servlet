@@ -1,0 +1,355 @@
+@import url(https://fonts.googleapis.com/css?family=Cabin:400);
+
+.fa{
+  color: #8168ff;
+}
+.header{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 5;
+    background-color: #5333ed;
+  }
+  .header button{
+  margin-right: 30px;
+  padding: 10px 20px 10px 20px;
+  background-color: cornflowerblue;
+  color: white;
+  margin-top: 10px;
+  border: none;
+  }
+  .container{
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    box-shadow:  0 0 8px 1px gray;
+
+  }
+  .left-nav{
+   width: 50%;
+   float: left;
+  }
+  .right-nav{
+    width: 50%;
+    float:right;
+  }
+  .right-nav button{
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 15px;
+    padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-top: 1%;
+  }
+  .right-nav button:hover{
+    background-color: #8168ff;
+    
+  }
+
+  .right-nav .dropdown:hover .dropDown-content {
+    display: block;
+  }
+  .right-nav .profile:hover .dropDown-content {
+    display: block;
+  }
+  .profile{
+    position: relative;
+    display: inline-block;
+  }
+  .dropdown{
+    position: relative;
+    display: inline-block;
+  }
+  .dropDown-content{
+        display: none;
+        position: absolute;
+        background-color: #5333ed;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        padding: 12px 16px;
+        z-index: 1;
+  }
+  .profile
+  {
+    border-radius:10px ;
+
+  }
+  .profile .fas
+  {
+    padding: 15px;
+    font-size: 24px;
+    border-radius: 50%;
+    background: #8168ff;
+  }
+  /* ---------------------------------------------------- */
+  body {
+    margin: 0;
+    font-family: "Lato", sans-serif;
+  }
+  
+  .sidebar {
+    float: left;
+    margin: 4% 0px 0px 0px;
+    padding: 0;
+    width: 15%;
+    height: 600px;
+    background-color: #f1f1f1;
+    overflow: auto;
+  }
+  
+  .sidebar a {
+    display: block;
+    color: black;
+    padding: 16px;
+    text-decoration: none;
+  }
+   
+  .sidebar a.active {
+    background-color: #8168ff;
+    color: white;
+  }
+  
+  .sidebar a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+  }
+  
+  div.content {
+    float: left;
+    width: 80%;
+    margin-top: 7%;
+    padding: 1px 16px;
+  }
+  .registration{
+    float: left;
+    height: 400px;
+    width: 80%;
+    margin-top: 7%;
+    padding: 1px 16px;
+    overflow: scroll;
+  }
+  .todaytrain{
+    height: 300px;
+    float: left;
+    width: 80%;
+    margin-top: 7%;
+    padding: 1px 16px;
+    overflow: scroll;
+  }
+  .earning{
+    overflow: scroll;
+    height: 400px;
+    float: left;
+    width: 80%;
+    margin-top: 7%;
+    padding: 1px 16px;
+  }
+  .view-Booking{
+    overflow: scroll;
+    height: 400px;
+    float: left;
+    width: 80%;
+    margin-top: 7%;
+    padding: 1px 16px;
+  }
+  .view-trains, .stopseditor{
+    overflow: scroll;
+    height: 400px;
+    float: left;
+    width: 80%;
+    margin-top: 7%;
+    padding: 1px 16px;
+    overflow-x: hidden;
+  }
+  .addTrains{
+    overflow: scroll;
+    height: 700px;
+    
+    float: left;
+    width: 80%;
+    margin-top: 7%;
+    padding: 1px 16px;
+  }
+  .editsStops{
+    overflow: scroll;
+     height: 200px;
+     float: left;
+     width: 30%;
+     margin-left:3%;
+     margin-top: 7%;
+     padding: 1px 16px;
+   }
+  
+  
+  @media screen and (max-width: 700px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    .sidebar a {float: left;}
+    div.content {margin-left: 0;}
+  }
+  
+  @media screen and (max-width: 400px) {
+    .sidebar a {
+      text-align: center;
+      float: none;
+    }
+  }
+  .box{
+    color: black;
+    float: left;
+    width: 45%; 
+    margin-left: 5%;
+    background-color: #ffffff;
+    text-align: center;
+    height: 200px;
+    box-shadow:  0 0 8px 1px gray;
+  }
+  .box h3{
+    color: white;
+    margin-top: 0;
+    background-color: #5333ed;
+    width: 100%;
+  }
+  .box:hover{
+    background-color: #8168ff;
+    color: white;
+  }
+  /* --------------------------------------table------------- */
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    box-shadow: 0 0 8px 1px grey;
+  }
+  th{
+    border: 1px solid #5333ed;
+    background-color: #8168ff;
+    color: white;
+  }
+  td {
+    border: 1px solid  #5333ed;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+  /* ----------------------------------------------- */
+  .addTrains {
+    font-family: Arial;
+  }
+
+  .addTrains input[type=number], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  .addTrains input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  .addTrains label{
+    color: #8168ff;
+  }
+  .addTrains input[type=submit] {
+    width: 100%;
+    background-color: #8168ff;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .addTrains input[type=submit]:hover {
+    background-color:  #5333ed;
+  }
+  .addTrains .container{
+   width: 50%;
+  }
+  .addTrains h1{
+   color: #5333ed;
+   }
+  .addTrains div.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+  #search-button {
+    height: 35px;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: none;
+    background-color: #1a73e8;
+    color: white;
+  }
+  #trainID-input {
+    height: 30px;
+    border-radius: 5px;
+    padding-left: 10px;
+  }
+  #date-input {
+    height: 30px;
+    border-radius: 5px;
+    padding-left: 10px;
+  }
+  .edit-button{
+    color: #4689e1;
+  }
+  .edit-button:hover{
+    color: #00367c;
+  }
+  .fa-trash{
+    color: deeppink;
+  }
+  .fa-trash:hover {
+    color: red;
+  }
+  .table-input {
+    border: none;
+    color: black;
+    width: 60px;
+    margin: 0px;
+    padding: 0px;
+  }
+  .fa-check {
+    color: rgb(59, 185, 59);
+  }
+  .fa-check:hover {
+    color: rgb(0, 231, 0);
+  }
+  #stops-editor {
+      padding-left: 30%;
+      padding-right: 24%;
+  }
+  .stop-editor {
+    margin: 10px;
+  }
+  #tagAdder {
+    display: flex;
+    justify-content: center;
+  }

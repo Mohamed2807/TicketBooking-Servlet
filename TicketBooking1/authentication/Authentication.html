@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Page Title</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <link rel='stylesheet' type='text/css' media='screen' href='authentication/Authentication.css'>
+  <script src='authentication/Authentication.js'></script>
+</head>
+<body>
+ 
+<div id="signIn">
+  <div class="box">
+    <div class="row">
+      <button  class="active" onclick="callSignIN();">Sign In</button>
+      <button onclick="callSignUp();">Sign Up</button>
+    </div>
+    <form action="home">
+      <h3 style="text-align: center;">Log In</h3>
+        <div class="row"><i>Email</i><input class="input"type="text" name="mail" id="signIn-mail" onkeyup="signIncheckEmail()" required>
+          <br> <i class="msg"id="signIn-nameMsg2"></i>
+        </div> 
+          <div class="row"><i>PassWord</i><input class="input" name="pass" id="pass" type="text" >
+          <br> <i class="msg"id="signIn-nameMsg1"></i>
+        </div> 
+          <input type="hidden" id="custId" name="role" value="signIn" required>
+          <div class="row"><input class="input" id="signIn-button"type="submit" >
+          </div> 
+        
+      </form>
+  </div>
+</div>
+<div id="signUp" class="hide">
+  <div class="box">
+    <div class="row">
+      <button onclick="callSignIN();">Sign In</button>
+      <button onclick="callSignUp();" class="active">Sign Up</button>
+    </div>
+    <form action="home">
+     <h3 style="text-align: center;">Registration</h3>
+      <div class="row"> <i>UserName</i><input class="input" name="name"id="signUp-name"type="text" required>
+      <i class="msg"id="nameMsg"></i></div>
+      <div class="row"><i>PassWord</i><input class="input" name="pass" id="signUp-pass" type="text"  onkeyup="callName('signUp-pass','nameMsg1')" required>
+      <br> <i class="msg"id="nameMsg1"></i></div> 
+      <div class="row"><i>Email</i><input class="input" name="mail"type="text" id="signUp-mail" onkeyup="signUpcheckEmail()"required>
+          <br> <i class="msg"id="signUp-nameMsg2"></i></div>  
+          <input type="hidden" id="custId" name="role" value="signup">
+      <div class="row"><input class="input" id="signUp-button" type="submit" ></div> 
+  </div>
+</form>
+</div>
+</body>
+</html>

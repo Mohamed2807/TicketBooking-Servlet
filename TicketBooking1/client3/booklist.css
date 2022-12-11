@@ -1,0 +1,20 @@
+#container, .one {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#history-container {
+    width: 50vw;
+    height: max-content;
+    margin-top: 60px;
+    border-radius: 5px;
+    box-shadow: 0 10px 90px 2px gray;
+    padding: 20PX;
+}
+.content {
+    margin: 25px;
+    height: 120px;
+    box-shadow: 0 0 20px 1px grey;
+    border: none;
+    padding: 40px;
+}

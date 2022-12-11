@@ -1,0 +1,106 @@
+body{
+    background-color:#c9c5c533;
+   
+}
+.header{
+    width: 101.5%;
+    height: 40px;
+    background-color:#5333ed;
+    color: white;
+    float: left;
+    border: none;
+    margin: -1%;
+    cursor: pointer;
+    outline: none;
+    padding: 14px 0px;
+    position: fixed;
+    
+}
+.header i{
+   color: rgb(243, 243, 243);
+   font-size: 30px;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   font-style:normal;
+   margin-left: 10px;
+   letter-spacing: 1px;
+
+   
+}
+
+
+h3{
+
+    color: white;
+}
+.box{
+    float: left;
+    
+    background-color:#61a7e5;
+    width: 30%;
+    min-width: 500px;
+    color: white;
+    margin-left: 35%;
+    border-radius: 15px;
+    
+}
+.row button{
+    background-color:#61a7e5;
+    float: left;
+    width: 50%;
+    color: white;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: none;
+
+}
+.row  .active{
+    background-color: #5333ed;
+    color: white;
+}
+
+
+.row button:hover{
+    background-color:#5333ed;
+    border: none;
+}
+.row{
+    margin: auto;
+    height: 70px;
+    width: 90%;
+    font-size:100%;
+    padding: 10px;
+
+}
+.input{
+    height: 35px;
+    width: 100%;
+    
+}
+.txt{
+    width:100%
+}
+.msg{
+    float: right;
+    color: red;
+    
+}
+#signIn{
+    margin-top: 10%;
+}
+.admin-authenticate{
+    width: 300px;
+    height: 200px;
+    margin: auto;
+    border: 2px solid #5333ed;
+}
+.admin-authenticate i{
+    font-size: 20px;
+    color: #5333ed;
+}
+.admin-authenticate h2{
+    color: #61a7e5;
+}
+.admin-authenticate #submit{
+    margin-left: 30%;
+}
